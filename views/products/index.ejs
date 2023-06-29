@@ -1,0 +1,125 @@
+<%- include('../partials/header') %>
+<h2 style="color: rgb(255, 255, 255);">Cost List Price</h2>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    html, body {
+      margin: 25;
+      padding: 0;
+      height: 1%;
+    }
+    
+    body {
+      background-image: url("https://images5.alphacoders.com/116/1166049.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    
+    .content {
+      position: relative;
+      z-index: 0;
+      /* background-color:blanchedalmond rgba(4, 0, 0, 0.8); Adjust the opacity if needed */
+    }
+    
+    .content img {
+      max-width: 10%;
+      height: -50;
+      width: 50;
+    }
+    
+    .animated-image {
+      animation: rotate 2s linear infinite;
+    }
+    
+    /* Existing styles */
+    
+    .animated-image {
+      animation: rotate 30s linear infinite, scale 0s ease-in-out infinite alternate;
+      /* transform-origin: center; Set the transform origin to the center of the image */
+    }
+
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg) scale(.1); /* Initial rotation and scale of the image */;
+      }
+      100% {
+        transform: rotate(360deg) scale(.1); /* Adjust the scale value to make the image smaller */;
+      }
+    }
+
+    @keyframes scale {
+      0% {
+        transform: scale(0); /* Initial scale of the image */
+      }
+      50% {
+        transform: scale(0); /* Adjust the scale factor as needed */
+      }
+      100% {
+        transform: scale(0); /* Back to the original scale */
+      }
+    }
+    
+    .container {
+      position: relative;
+      width: 0px; /* Adjust the width as needed */
+      height: 0px; /* Adjust the height as needed */
+    }
+    
+    .container img {
+      position: absolute;
+      top: 0%; /* Adjust the top position */
+      left: 0%; /* Adjust the left position */
+      transform: translate(-100%, -100%);
+    }
+    
+    /* Rest of the styles */
+    
+    body {
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <table>
+      <thead>
+        <tr>
+          <th style="color: rgb(255, 255, 255);">Name|</th>
+          <th style="color: rgb(255, 255, 255);">Price|</th>
+          <th style="color: rgb(255, 255, 255);">Version|</th>
+          <th style="color: rgb(255, 248, 235);">Type|</th>
+          <th style="color: rgb(255, 255, 255);">Custom Tailor</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  
+  </thead>
+  <tbody>
+    <tr>
+    <% products.forEach(function(m) { %>
+      <td><a href="/products/<%=m.id%>"><%= m.name %></a></td>
+      <td><%= m.price %></td>
+      <td><%= m.version %></td>
+      <td><%= m.type %></td>
+      <td><%= m.customTailor %></td>
+      <td>
+        <form action="/products/<%= m.id %>?_method=DELETE" method="POST" class="delete-form">
+          <button type="submit">X</button>
+        </form>
+      </td>
+    </tr>
+    <% }) %>
+  </tbody>
+  </table>
+  <a href="/products/new">Add Product</a>
+  </div>
+  <div class="container">
+    <img class="animated-image" src="https://free4kwallpapers.com/uploads/originals/2022/04/20/rubiks-cube-digital-art-wallpaper.jpg" alt="Animated Image">
+  </div>
+</body>
+</html>
+
+<%- include('../partials/footer') %>

@@ -1,0 +1,61 @@
+<%- include('../partials/header') %>
+
+<form action="/products/<%= products.id %>?_method=PUT" method="post">
+
+    <table>
+        <tr>
+            <td>
+                Name of Product: 
+            </td>            
+            <td>
+                <input type="text" name="name" value="<%= products.name %>">
+            </td>
+        <!-- </tr>
+            <td>
+                Model: 
+            </td>            
+            <td>
+                <input type="text" name="model" value="<%= products.model %>">
+            </td>
+        </tr> -->
+
+        <tr>
+            <td>
+                price: 
+            </td>
+            <td>
+                <input type="text" name="price" value="<%= products.price %>">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Year Released: 
+            </td>
+            <td>
+                <input type="text" name="releasedYear" value="<%= products.releaseYear %>">
+            </td>
+        </tr>
+
+        <!-- <tr>
+            <td>
+                Type: 
+            </td>
+            <td>
+                <input type="text" name="type" value="<%= products.type %>">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Custome Tailor: 
+            </td>
+            <td>
+                <input type="text" name="customeTailor" value="<%= products.customeTailor %>">
+            </td>
+        </tr> -->
+
+    </table>  
+
+    <button type="submit">Update Products</button>
+</form>
+
+<%- include('../partials/footer') %>

@@ -1,0 +1,21 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #dae5ea;
+}
+body {
+  background-image: url("https://old.theluxtraveller.com/wp-content/uploads/2016/07/42_TNH_Reflections.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+}
+

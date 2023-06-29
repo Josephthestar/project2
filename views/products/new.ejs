@@ -1,0 +1,29 @@
+<%- include('../partials/header') %>
+
+<h2>Enter a New Product or Vacation</h2>
+<form action="/products" method="POST">
+  <label>Name of Prodct or Vacation:
+    <input type="text" name="name">
+  </label><br>
+  <label>Cost of Product or Vacation:
+    <input type="number" name="price">
+  </label><br>
+  <label>Release Year of expected item or what year you want to Book your Vacation
+    <select name="releaseYear">
+      <option value="2023">2023</option>
+      <option value="2024">2024</option>
+      <option value="2025">2025</option>
+    </select>
+  </label><br>
+  <label>Version:
+    <input type="text" name="version">
+  </label><br>
+</label><br>
+<button type="submit">Save Product</button>
+</form>
+<p><%= errorMsg %></p>
+
+<!-- <label>Now Availible: -->
+  <!-- <input type="checkbox" name="nowShowing"> -->
+
+<%- include('../partials/footer') %>
